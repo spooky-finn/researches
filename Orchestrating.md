@@ -8,7 +8,7 @@ The primary objective of this study is to delve into thought-provoking inquiries
 
 In the second practical section, we transition towards practical implementation, delving into the integration of Temporal concepts into real-world scenarios. Throughout this journey, we aim to offer insightful reflections on the implications of our findings.
 
-## 1 The role
+## 1. The role
 
 One such consideration arises from the knowledge that a Temporal Cluster meticulously archives every state alteration within the system. This prompts the following question:
 
