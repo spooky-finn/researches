@@ -1,4 +1,4 @@
-# Research: Temporal. Dealign with distributed transactioning system without blood
+# Research: Temporal. Dealign with distributed transactioning system without a headache
 
 In this research, we embark on an exploration of orchestrating distributed processing systems, elucidating fundamental concepts through the lens of an illustrative example. Our focus centers on the intricate interplay between three services, exemplifying the construction of a scalable architecture tailored for the management of complex state changes.
 
@@ -11,6 +11,18 @@ One such consideration arises from the knowledge that a Temporal Cluster meticul
 **Can Temporal replace logging, tracing systems, or other data persisting strategies?**
 
 > The answer depends on the use case. Temporal workflows are stateful, so all data related to the process of fulfilling an order doesn't need to be stored in a separate database. However, Temporal lacks advanced querying capabilities across multiple workflows. For example, listing orders, especially those closed last year, is not something it can provide. Additionally, Temporal is not designed to store other data such as customer addresses, payment information, etc. My approach is that workflows should be queried directly for the current state of an order while it is open. The database is used to list and search for specific orders and maintain 2historical information. It is not ideal for workflows to poll the database for a state field. [1]
+
+In a more granular examination of the issue, it becomes evident that the Workflow paradigm is particularly beneficial under the following circumstances:
+
+- Synchronization Across Actors (e.g., Microservices): When there is a need to synchronize state across multiple actors or components, such as microservices within a distributed system.
+
+- Desire for Fault Tolerance and Replayable Logic: In scenarios where fault tolerance and the ability to perfectly replay logic are essential requirements.
+
+- Seeking a Scalability Abstraction with Minimal Resource Overhead: When aiming for a scalable solution that abstracts scalability concerns without incurring unnecessary hardware resource wastage.
+
+These criteria are notably tailored for execution models centered around microservices. However, to broaden the scope and applicability of Workflow paradigms, it's beneficial to move away from hardware and network-related guarantees.
+
+**The core concept** introduced by Workflows paradigm is the Inversion of Execution, emphasizing the presence of a coordination layer where execution and execution planning are abstracted. This abstraction allows for a more generalized understanding of the utility of Workflow paradigms beyond specific hardware or network constraints.
 
 References:
 
