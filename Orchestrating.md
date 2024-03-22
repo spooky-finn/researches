@@ -26,7 +26,9 @@ In a more granular examination of the issue, it becomes evident that the Workflo
 
 These criteria are notably tailored for execution models centered around microservices. However, to broaden the scope and applicability of Workflow paradigms, it's beneficial to move away from hardware and network-related guarantees.
 
-**The core concept** introduced by Workflows paradigm is the Inversion of Execution, emphasizing the presence of a coordination layer where execution and execution planning are abstracted. This abstraction allows for a more generalized understanding of the utility of Workflow paradigms beyond specific hardware or network constraints.
+In essence, backend services are inherently stateless, relying instead on a persistent storage system. Meanwhile, Temporal provides a reliable code execution environment where state manipulations are deterministic and atomic.
+
+*The core concept* introduced by the Workflows paradigm is the Inversion of Execution, emphasizing the existence of a coordination layer where execution and execution planning are abstracted. This abstraction allows for a more generalized understanding of the utility of Workflow paradigms beyond specific hardware or network constraints.
 
 References:
 
