@@ -1,10 +1,12 @@
-# Research: Temporal. Deal easy with distributed processing system
+# Research: Temporal. Dealign with distributed transactioning system without blood
 
-In this research, I will explain some basic concepts about orchestrating distributed processing systems using an example with the interconnection between three services to build a scalable system for managing complex state changes. The system will consist of three different services: `market-exchanger`, `request-splitter` and `order-executor`.
+In this research, we embark on an exploration of orchestrating distributed processing systems, elucidating fundamental concepts through the lens of an illustrative example. Our focus centers on the intricate interplay between three services, exemplifying the construction of a scalable architecture tailored for the management of complex state changes.
 
-The purpose of this paper is to address interesting questions that have been identified as research topics.
+The primary objective of this study is to delve into thought-provoking inquiries that have surfaced as pertinent research avenues within this domain. As we acquire more knowledge, our goal is to understand the transition details from a queue-based choreography architecture to orchestration. Therefore, we are solely exploring the application of Temporal for one specific use case and examining its benefits and disadvantages solely related to this case.
 
-You may have read that Temporal Cluster persists every state change of the system. This raises the question:
+In the subsequent section, we transition towards practical implementation, delving into the integration of Temporal concepts into real-world scenarios. Throughout this journey, we aim to offer insightful reflections on the implications of our findings.
+
+One such consideration arises from the knowledge that a Temporal Cluster meticulously archives every state alteration within the system. This prompts the following question:
 
 **Can Temporal replace logging, tracing systems, or other data persisting strategies?**
 
@@ -13,3 +15,4 @@ You may have read that Temporal Cluster persists every state change of the syste
 References:
 
 1. [Response](https://community.temporal.io/t/should-i-maintain-separate-database-for-my-data/9430)
+2. [Integration with Nest JS](https://www.restack.io/docs/temporal-knowledge-temporal-io-nestjs-integration)
