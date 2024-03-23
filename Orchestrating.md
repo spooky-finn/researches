@@ -2,11 +2,11 @@
 
 Abstract
 
-In this research, we embark on an exploration of orchestrating distributed processing systems, elucidating fundamental concepts through the lens of an illustrative example. Our focus centers on the intricate interplay between three services, exemplifying the construction of a scalable architecture tailored for the management of complex state changes.
+In this research (or case study), we embark on an exploration of orchestrating distributed processing systems, elucidating fundamental concepts through the lens of an illustrative example. Our focus center on the intricate interplay between three services, exemplifying the construction of a scalable architecture tailored for the management of complex state changes.
 
 The primary objective of this study is to delve into thought-provoking inquiries that have surfaced as pertinent research avenues within this domain. As we acquire more knowledge, our goal is to understand the transition details from a queue-based choreography architecture to orchestration. Therefore, we are solely exploring the application of Temporal for one specific use case and examining its benefits and disadvantages solely related to this case.
 
-In the second practical section, we transition towards practical implementation, delving into the integration of Temporal concepts into real-world scenarios. Throughout this journey, we aim to offer insightful reflections on the implications of our findings.
+In the second practical section, we transition towards practical implementation, delving into the integration of Temporal concepts into real-world scenario. Throughout this journey, we aim to offer insightful reflections on the implications of our findings.
 
 ## 1. The role
 
@@ -29,6 +29,17 @@ These criteria are notably tailored for execution models centered around microse
 In essence, backend services are inherently stateless, relying instead on a persistent storage system. Meanwhile, Temporal provides a reliable code execution environment where state manipulations are deterministic and atomic.
 
 *The core concept* introduced by the Workflows paradigm is the Inversion of Execution, emphasizing the existence of a coordination layer where execution and execution planning are abstracted. This abstraction allows for a more generalized understanding of the utility of Workflow paradigms beyond specific hardware or network constraints.
+
+## Prerequsite
+
+Defining Workflows in Temporal involves a structured approach of translating requirements into Workflow functions (control-flow logic) and Activity Functions (any external dependency request which may fail).
+
+*Workflow Functions*: They must maintain deterministic behavior to guarantee consistent results. Moreover, Workflow executions have the capability to communicate with each other through signals or messages, enabling seamless coordination and orchestration.
+
+Meanwhile Temporal takes care of the questions such as retries, compensating transactions, synchronization of asynchronous work, execution of sub-workflows, queries, signaling, timeouts, generating random values, generating UUIDs, logging, and more.
+Temporal incorporates native support for the Saga Pattern, an architectural design pattern that enables compensating transactions to rectify the consequences of failures in individual services. This ensures robustness and reliability in complex distributed systems.
+
+*Activity Functions*: Activity functions, orchestrated by Workflow functions, can operate with a higher degree of freedom. They can be entirely non-deterministic, asynchronous, and execute any code without restrictions. However, they must be idempotent to maintain consistency and reliability in the system.
 
 References:
 
